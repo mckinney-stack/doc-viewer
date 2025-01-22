@@ -2,11 +2,9 @@ import React, { useState, FC } from 'react';
 
 interface FolderProps {
     folder: {
-      id: number;
       name: string;
       type: 'folder';
       files: {
-        id: number;
         name: string;
         type: 'folder' | 'file';
         added: string; 
