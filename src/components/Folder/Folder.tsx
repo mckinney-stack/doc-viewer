@@ -13,12 +13,18 @@ interface FolderProps {
   }
 
   const Folder: FC<FolderProps> = ({ folder }) => {
+    const [isOpen, setIsOpen] = useState(false);
   
     return (
       <li>
-        <div className="folder">
+        <div onClick={() => setIsOpen(!isOpen)} className="folder">
           📁 <strong>{folder.name}</strong> ({folder.files.length} items)
         </div>
+        {isOpen && folder.files.map((file) => (
+          <div key={file.name}>
+            {file.name}
+          </div>
+        ))}
       </li>
     );
   };
