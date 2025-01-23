@@ -1,4 +1,5 @@
 import React, { useState, FC } from 'react';
+import DocumentList from '../DocumentList/DocumentList.tsx';
 
 interface FolderProps {
     folder: {
@@ -20,11 +21,7 @@ interface FolderProps {
         <div onClick={() => setIsOpen(!isOpen)} className="folder">
           📁 <strong>{folder.name}</strong> ({folder.files.length} items)
         </div>
-        {isOpen && folder.files.map((file) => (
-          <div key={file.name}>
-            {file.name}
-          </div>
-        ))}
+        {isOpen && <DocumentList documents={folder.files} />}
       </li>
     );
   };
