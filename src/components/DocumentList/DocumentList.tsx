@@ -1,6 +1,7 @@
 import React, { useState, FC } from 'react';
 import Folder from '../Folder/Folder.tsx';
 import File from '../File/File.tsx';
+import { StyledButton } from './DocumentList.styles.js';
 
 interface Document {
   name: string;
@@ -29,8 +30,8 @@ const DocumentList: FC<DocumentListProps> = ({ documents }) => {
   return (
     <div>
       <div className="sort-options">
-        <div onClick={() => handleSort('name')}>Sort by Name</div>
-        <div onClick={() => handleSort('dateAdded')}>Sort by Date</div>
+        <StyledButton onClick={() => handleSort('name')}>Sort by Name</StyledButton>
+        <StyledButton onClick={() => handleSort('dateAdded')}>Sort by Date</StyledButton>
       </div>
       <ul>
         {sortedDocs.map((doc, index) =>

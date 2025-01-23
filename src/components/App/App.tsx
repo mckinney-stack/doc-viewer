@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent } from 'react';
 import DocumentList from '../DocumentList/DocumentList.tsx';
 import data from '../../data/data.json';
+import { StyledAppContainer, StyledInput } from './App.styles.js';
+import { GlobalStyles } from '../../styles/GlobalStyles.js';
 
 interface Document {
   id: number;
@@ -18,15 +20,16 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="app">
+    <StyledAppContainer className="app">
+      <GlobalStyles />
       <h1>DocViewer</h1>
-      <input 
+      <StyledInput 
         type="text" 
         placeholder="Search by filename..." 
         onChange={handleFilterChange} 
       />
       <DocumentList documents={filteredDocuments} />
-    </div>
+    </StyledAppContainer>
   );
 };
 
