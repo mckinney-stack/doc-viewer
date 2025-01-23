@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const File = ({ file }) => (
-    <div></div>
+interface FileProps {
+  file: {
+    name: string;
+    type: 'file';
+    added: string; 
+  };
+}
+
+const File: FC<FileProps> = ({ file }) => (
+  <li>
+    📄 {file.name} (Type: {file.type}, Added: {file.added})
+  </li>
 );
 
 export default File;
