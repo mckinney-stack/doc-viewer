@@ -3,11 +3,19 @@ import Folder from '../Folder/Folder.tsx';
 import File from '../File/File.tsx';
 import { StyledButton } from './DocumentList.styles.js';
 
-interface Document {
+interface File {
+  type: string;
   name: string;
-  type: 'folder' | 'file';
-  dateAdded?: string; 
+  added: string;
 }
+
+interface Folder {
+  type: 'folder';
+  name: string;
+  files: File[];
+}
+
+type Document = File | Folder;
 
 interface DocumentListProps {
   documents: Document[];

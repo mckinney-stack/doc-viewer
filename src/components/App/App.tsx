@@ -4,10 +4,19 @@ import data from '../../data/data.json';
 import { StyledAppContainer, StyledInput } from './App.styles.js';
 import { GlobalStyles } from '../../styles/GlobalStyles.js';
 
-interface Document {
-  id: number;
+interface File {
+  type: string;
   name: string;
+  added: string;
 }
+
+interface Folder {
+  type: 'folder';
+  name: string;
+  files: File[];
+}
+
+type Document = File | Folder;
 
 const App: React.FC = () => {
   const [documents, setDocuments] = useState<Document[]>(data);

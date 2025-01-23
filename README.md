@@ -58,6 +58,14 @@ To implement TDD for the `DocumentList` and `App` components, I would:
    - Refactor the code to improve readability and performance while ensuring that all tests still pass.
    - Continuously run tests to verify that the changes do not introduce any regressions.
 
+### Improve Type Definitions
+To improve type definitions, I would:
+
+1. **Create a Separate Types File**:
+   - Define all necessary types and interfaces in a separate `types.ts` file.
+
+2. **Import Types Where Needed**:
+   - Import the types into each component file to ensure type safety and consistency across the application.
 
 ## Folder Structure
 ```
